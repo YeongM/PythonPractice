@@ -20,6 +20,7 @@ for i in range(len(b)-1):
 print(result)
 
 
+
 #해답 : 두 수중에 0또는 1이 있으면 + 그게 아니면 x가 효율적이다.
 data=input()
 #첫 번째 문자를 숫자로 변경하여 대입
