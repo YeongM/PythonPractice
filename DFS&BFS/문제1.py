@@ -2,6 +2,33 @@
 #구멍이 뚫려있는 부분끼리 상하좌우로 붙어 있는 경우 서로 연셜되어 있는 것으로 간주합니다.
 #이때 얼음 틀의 모양이 주어졌을 때 생성되는 총 아이스크임의 개수를 구하는 프로그램을 작겅하세요.
 
+def DFS(x,y):
+    if x>=n or x<0 or y>=m or y<0:
+        return False
+    #떨어져 있는 공간이라면
+    if array[x][y]==0:
+        array[x][y]=1
+        DFS(x-1,y)
+        DFS(x+1,y)
+        DFS(x,y-1)
+        DFS(x,y+1)
+        return True
+    return False
+n,m = map(int,input().split())
+result=0
+array=[]
+for i in range(n):
+    array.append(list(map(int,input())))
+
+for i in range(n):
+    for j in range(m):
+        if DFS(n,m) == True:
+            result+=1
+print(result)
+
+
+
+#해답
 #DFS로 특정 노드를 방문하고 연결괸 모든 노드들도 방문
 def dfs(x,y):
     #주어진 범위를 벗어나면 즉시 종료
