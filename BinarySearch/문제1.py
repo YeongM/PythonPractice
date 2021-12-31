@@ -39,7 +39,7 @@ n, m = map(int,input().split())
 data = list(map(int,input().split()))
 start = 0
 end = max(data)
-
+#
 result=0
 while(start <= end):
     total = 0
